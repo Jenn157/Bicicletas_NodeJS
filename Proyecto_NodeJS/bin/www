@@ -1,28 +1,31 @@
 #!/usr/bin/env node
 
 /**
- * Module dependencies.
+ * Realizado por:
+ * -Santiago Andres Rodriguez
+ * -Jennifer Acuña Amado
  */
 
+//Importacion de modulos 
 var app = require('../app');
 var debug = require('debug')('proyecto-nodejs:server');
 var http = require('http');
 
 /**
- * Get port from environment and store in Express.
+ * Especifica el puerto en el que va a estar escuchando express y se le asigna a app 
  */
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Crear el server mandando como parametro la variable app 
  */
 
 var server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
+ * Se escucha el puerto y se valida el caso de exito o error enviando sus respectivos mensajes 
  */
 
 server.listen(port);
@@ -30,7 +33,7 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 /**
- * Normalize a port into a number, string, or false.
+ * Normalizar el puerto 
  */
 
 function normalizePort(val) {
@@ -50,7 +53,7 @@ function normalizePort(val) {
 }
 
 /**
- * Event listener for HTTP server "error" event.
+ * Funcion que va a controlar el manejo de errores mediante la consola 
  */
 
 function onError(error) {
@@ -78,7 +81,7 @@ function onError(error) {
 }
 
 /**
- * Event listener for HTTP server "listening" event.
+ * Funcion que controla el correcto funcionamiento del server, evidenciando que va sucediendo en el 
  */
 
 function onListening() {
